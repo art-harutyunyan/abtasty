@@ -4,7 +4,7 @@ describe("Login Test suite", () => {
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
   });
 
-  it.only("Test Case 1 | Login with correct credentials", () => {
+  it("Test Case 1 | Login with correct credentials", () => {
     cy.intercept("POST", Cypress.env("apis").login).as("nonExistingUsernaem");
     cy.flakyType(
       '[data-testid="emailInput"]>>input',

@@ -12,7 +12,7 @@ describe("Test suite for reset password", () => {
       .and("have.text", "Forgot your password?");
   });
 
-  it.only("Test Case 2 | Validate navigation with ResetPassword", () => {
+  it("Test Case 2 | Validate navigation with ResetPassword", () => {
     cy.get('[data-testid="resetPasswordLink"]>a')
       .invoke("attr", "href")
       .then((href) => {

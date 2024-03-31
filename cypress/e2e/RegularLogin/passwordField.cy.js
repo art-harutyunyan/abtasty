@@ -37,7 +37,7 @@ describe("Test suite for password field", () => {
     );
   });
 
-  it.only("Test Case 5 | Validate password show/hide icon", () => {
+  it("Test Case 5 | Validate password show/hide icon", () => {
     cy.flakyFocus('[data-testid="passwordInput"]>>input')
       .should("be.visible")
       .and("have.attr", "type", "password");

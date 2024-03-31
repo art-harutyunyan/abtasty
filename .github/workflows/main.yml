@@ -2,12 +2,12 @@ name: AbTasty
 on: [push]
 
 jobs:
-  machine:
+  cypress-run:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Adding env variables
         run: |
           echo '${{ secrets.CI_ENV_VARIABLES }}' > cypress.env.json
