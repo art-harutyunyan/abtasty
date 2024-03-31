@@ -13,7 +13,7 @@ Automated tests have been created to cover:
 
 Could not reproduce:
 
-1. After 3 wrong attempts the Captcha is triggered (I could not)
+1. After 3 wrong attempts the Captcha is triggered
 
 ## Getting Started
 
@@ -42,4 +42,4 @@ These instructions will get you a copy of the project up and running on your loc
 
 I am recording the tests in Cypress Cloud ;)
 
-![Example screenshot]()
+![Example screenshot](https://github.com/art-harutyunyan/abtasty/blob/c7a975111b98a9adae8c06d49dc017dbdc01ab28/abtastyCypressCloud.png)
