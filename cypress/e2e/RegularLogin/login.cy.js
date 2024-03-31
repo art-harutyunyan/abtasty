@@ -18,9 +18,10 @@ describe("Login Test suite", () => {
     cy.wait("@nonExistingUsernaem")
       .its("response")
       .then((res) => {
+        cy.log(res);
         expect(res.statusCode).to.equal(200);
         cy.location("pathname").should("contain", "/mfa/sms");
-        cy.log(res);
+        expect(res.body.mfaToken).to.not.be.empty;
       });
     cy.contains("Return to login").should("be.visible");
 

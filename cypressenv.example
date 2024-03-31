@@ -5,7 +5,11 @@
     "nonExistingUsername": nonExisting@fake.com,
     "incorrectPassword": incorrectPassword
   },
+  "ssoCreds": {
+    "validSSO": "sso@abtasty.com"
+  },
   "apis": {
-    "login": loginAPI
+    "login": loginAPI,
+    "ssologin": ssoLoginAPI
   }
 }
