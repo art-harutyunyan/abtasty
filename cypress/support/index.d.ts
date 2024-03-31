@@ -7,6 +7,14 @@ declare namespace Cypress {
      * cy.flakyType("#email", "some@email.com")
      */
     flakyType(selector: string, text: string): Chainable<any>;
+
+    /**
+     * Use this function to recursively focus the field
+     * when the input field focus is flaky
+     * @example
+     * cy.flakyFocus("#email", "some@email.com")
+     */
+    flakyFocus(selector: string, text: string): Chainable<any>;
     /**
      * Hiding the public message in the local storage
      * visiting the desired page

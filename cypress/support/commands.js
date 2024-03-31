@@ -52,6 +52,35 @@ Cypress.Commands.add("flakyType", (selector, text, retries = 3) => {
   return typeUntilMatch();
 });
 
+Cypress.Commands.add("flakyFocus", (selector, retries = 3) => {
+  let attempts = 0;
+
+  const focusUntilMatch = () => {
+    attempts++;
+    cy.log(selector, attempts);
+
+    if (attempts > retries) {
+      throw new Error(
+        `Failed to focus on "${selector}" after ${retries} attempts`
+      );
+    }
+
+    return cy
+      .get(selector)
+      .focus()
+      .should("be.focused")
+      .then(() => {
+        return cy.get(selector).then((element) => {
+          if (!element.is(":focus")) {
+            return focusUntilMatch();
+          }
+        });
+      });
+  };
+
+  return focusUntilMatch();
+});
+
 Cypress.Commands.add("init", (page) => {
   cy.visit(page);
   cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });

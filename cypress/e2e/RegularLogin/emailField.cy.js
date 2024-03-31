@@ -1,12 +1,15 @@
-import { hexToRGB } from "../support/helper.js";
+import { hexToRGB } from "../../support/helper.js";
 
 describe("Test Suite for Email field test cases", () => {
   beforeEach(() => {
     cy.init("/login");
+    cy.location("pathname").should("equal", "/login");
   });
 
   it("Test Case 1 | Email field should have its label", () => {
-    cy.get('[data-testid="emailLabel"]').should("have.text", "E-mail");
+    cy.get('[data-testid="emailLabel"]')
+      .should("be.visible")
+      .and("have.text", "E-mail");
   });
 
   it("Test Case 2 | Validate email field to be focusable", () => {

@@ -1,0 +1,11 @@
+{
+  "accounts": {
+    "correctEmail": correctEmail,
+    "correctPassword": correctpassword,
+    "nonExistingUsername": nonExisting@fake.com,
+    "incorrectPassword": incorrectPassword
+  },
+  "apis": {
+    "login": loginAPI
+  }
+}
