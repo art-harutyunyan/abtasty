@@ -12,7 +12,7 @@ module.exports = defineConfig({
     viewportWidth: 1536,
     retries: {
       openMode: 2,
-      runMode: 2,
+      runMode: 4,
     },
   },
 });

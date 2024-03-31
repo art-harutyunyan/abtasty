@@ -4,6 +4,10 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2]
 
     steps:
       - name: Checkout
@@ -14,5 +18,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
+          parallel: true
           browser: chrome
           headless: true
